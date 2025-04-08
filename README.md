@@ -8,11 +8,11 @@
 ### Setup Environment
 - Command Prompt
 ```bash
-set ZEPHYR_BASE=C:\Users\royya\zephyrproject\zephyr & call "%HOMEPATH%\zephyrproject\.venv\Scripts\activate.bat" & west zephyr-export
+set ZEPHYR_BASE=%HOMEPATH%\zephyrproject\zephyr & call "%HOMEPATH%\zephyrproject\.venv\Scripts\activate.bat" & west zephyr-export
 ```
 - Powershell
 ```powershell
-$env:ZEPHYR_BASE = "C:\Users\royya\zephyrproject\zephyr"; & "$env:HOMEPATH\zephyrproject\.venv\Scripts\Activate.ps1"; west zephyr-export
+$env:ZEPHYR_BASE = "$env:HOMEPATH\zephyrproject\zephyr"; & "$env:HOMEPATH\zephyrproject\.venv\Scripts\Activate.ps1"; west zephyr-export
 ```
 
 ### Create Project
