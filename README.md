@@ -20,14 +20,16 @@ $env:ZEPHYR_BASE = "$env:HOMEPATH\zephyrproject\zephyr"; & "$env:HOMEPATH\zephyr
 
 ### Build
 ```bash
-west build -p always -b blackpill_f411ce -d build_blackpill_f411ce
-west build -p always -b esp32s3_devkitc/esp32s3/procpu -d build_esp32s3_devkitc
-west build -p always -b esp32_devkitc_wroom/esp32/procpu # should consider to just use `-d build/` default directory, or else will not be able to use `west espressif monitor`, instead use miniterm
+west build -b xiao_ble -p always -d build_xiao_ble
+west build -b blackpill_f411ce -p always -d build_blackpill_f411ce
+west build -b esp32s3_devkitc/esp32s3/procpu -p always -d build_esp32s3_devkitc
+west build -b esp32_devkitc_wroom/esp32/procpu -p always # should consider to just use `-d build/` default directory, or else will not be able to use `west espressif monitor`, instead use miniterm
 ```
 
 ### Flash
 ```bash
 west flash
+west flash --esp-device COM3
 west flash --build-dir build_esp32_devkitc_wroom --esp-device COM3
 ```
 
