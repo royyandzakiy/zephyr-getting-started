@@ -14,9 +14,13 @@ set ZEPHYR_BASE=%HOMEPATH%\zephyrproject\zephyr & call "%HOMEPATH%\zephyrproject
 ```powershell
 $env:ZEPHYR_BASE = "$env:HOMEPATH\zephyrproject\zephyr"; & "$env:HOMEPATH\zephyrproject\.venv\Scripts\Activate.ps1"; west zephyr-export
 ```
+- For Espressif, install dependencies
+```bash
+west blobs fetch hal_espressif
+```
 
 ### Create Project
-- Create projects within `%HOMEPATH%\zephyrproject\projects`
+- Create projects within `%HOMEPATH%\zephyrproject\projects` or wherever really
 
 ### Build
 ```bash
@@ -40,8 +44,8 @@ west monitor -p COM3
 
 Espressif Systems
 ```bash
-west espressif monitor --port COM3
 west espressif monitor -p COM3
+west espressif monitor --port COM3
 
 # alternatively for espressif systems
 python -m serial.tools.miniterm COM3 115200
